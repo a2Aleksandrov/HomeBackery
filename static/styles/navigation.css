@@ -28,3 +28,7 @@ nav.navbar ul li:hover>a {
     display:inline-flex;
     padding-left: 20rem;
 }
+
+#greeting {
+    align-self: center;
+}

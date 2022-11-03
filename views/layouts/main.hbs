@@ -31,7 +31,7 @@
             {{/if}}
             <div id="right-buttons">
                 {{#if user}}
-                <span>Здравей, {email}</span>
+                <span id="greeting">Здравей, {{user.username}}</span>
                 <a id="logoutBtn" class="button" href="/logout">Изход</a>
                 {{else}}
                 <a class="button" href="/login">Вход</a>
