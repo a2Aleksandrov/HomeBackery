@@ -3,7 +3,7 @@ const data = require('../connData');
 
 function hasUser() {
     return (req, res, next) => {
-        
+
         if (req.user) {
             next();
         } else {
@@ -26,7 +26,19 @@ function isAdmin() {
     }
 }
 
+function hasAccess() {
+    return (req, res, next) => {
+
+        if (req.user && req.user.email == data.admin) {
+
+            next();
+        }
+        res.redirect('/404');
+    }
+}
+
 module.exports = {
     hasUser,
     isAdmin,
+    hasAccess
 }

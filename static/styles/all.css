@@ -122,15 +122,15 @@ img {
 .deleteBook>p:nth-child(2),
 .otherBooks>p:nth-child(2),
 .otherBooks>p:nth-child(3),
-.otherBooks>p:nth-child(4)
- {
+.otherBooks>p:nth-child(4) {
     margin: 5px
 }
 
 .otherBooks>p:first-child {
     font-size: 22px
 }
-.options{
+
+.options {
     margin: 5px
 }
 
@@ -261,4 +261,10 @@ textarea#description {
     font-size: 20px;
     text-shadow: 4px 4px 8px blue;
     text-align: center;
+}
+
+.notFound,
+.contacts {
+    text-align: center;
+    margin: 10rem;
 }

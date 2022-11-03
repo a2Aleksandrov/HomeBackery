@@ -7,13 +7,13 @@
             <p class="img"><img src="{{img}}"></p>
             <p>{{price}} лв</p>
             <a class="button" href="/details/{{_id}}">Описание</a>
-
+            {{#if ../user}}
             <div class="options">
                 <span>Количество: <input class="qty" type="number" /></span>
 
                 <a id="add" class="button" href="javascript:void(0)">Добави</a>
             </div>
-
+            {{/if}}
         </li>
         {{/each}}
     </ul>

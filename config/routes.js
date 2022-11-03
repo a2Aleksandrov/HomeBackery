@@ -1,9 +1,10 @@
-const { isAdmin } = require("../middlewares/guards");
+const { isAdmin, hasAccess } = require("../middlewares/guards");
 const homeController = require("../controllers/homeCtrl");
 const auth = require("../controllers/authCtrl");
 const catalogController = require("../controllers/catalogCtrl");
 const addController = require("../controllers/addCtrl");
 const aboutController = require("../controllers/aboutCtrl");
+const notFoundController = require("../controllers/404Ctrl");
 
 
 module.exports = (app) => {
@@ -14,6 +15,8 @@ module.exports = (app) => {
     app.use('/login', auth.loginController);
     app.use('/logout', auth.logoutController);
     app.use('/catalog', catalogController);
-    app.use('/add', addController);
+    app.use('/add', hasAccess(), addController);
     app.use('/about', aboutController);
+
+    app.all('/*', notFoundController);
 }

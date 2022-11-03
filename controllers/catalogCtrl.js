@@ -4,10 +4,12 @@ const catalogController = require('express').Router();
 
 catalogController.get('/backery', async (req, res) => {
     const backery = await getAllBackery().lean();
+    
     res.render('backery', {
         title: 'Backery Catalog',
-        user: req.user,
-        backery
+        backery,
+        user: req.user
+
     });
 });
 
