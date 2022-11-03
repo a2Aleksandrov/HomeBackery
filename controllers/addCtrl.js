@@ -29,7 +29,6 @@ addController.post('/', async (req, res) => {
             throw new Error('Типът на продукта трябва да е "печива" или "материали"');
         }
         if (req.body.option == 'печива') {
-            console.log('passed')
             await addBackery(data);
             res.redirect('/catalog/backery');
         }

@@ -15,20 +15,35 @@ nav.navbar ul li:hover>a {
 }
 
 #left-buttons {
-    display:inline-flex;
+    display: inline-flex;
 }
 
 #right-buttons {
-    display:inline-flex;
+    display: inline-flex;
     position: relative;
     float: right;
 }
 
 #admin {
-    display:inline-flex;
-    padding-left: 24rem;
+    display: inline-flex;
 }
 
 #greeting {
     align-self: center;
+}
+
+#basket {
+    background: none;
+    margin: 0px;
+    padding-bottom: 0;
+
+}
+
+.logo {
+    width: 56px;
+    height: 36px;
+    display: inline;
+    position: static;
+    padding: 0px;
+    border-radius: 1rem;
 }

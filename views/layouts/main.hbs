@@ -22,17 +22,20 @@
             <div id="left-buttons">
                 <a class="button" href="/catalog/backery">Печива</a>
                 <a class="button" href="/catalog/mats">Материали</a>
+                <a class="button" href="/gallery">Галерия</a>
                 <a class="button" href="/about">Контакти</a>
             </div>
-            {{#if user.admin}}
-            <div id="admin">
-                <a class="button" href="/add">Добави</a>
-            </div>
-            {{/if}}
+
             <div id="right-buttons">
                 {{#if user}}
                 <span id="greeting">Здравей, {{user.username}}</span>
+                {{#if user.admin}}
+                <div id="admin">
+                    <a class="button" href="/add">Добави</a>
+                </div>
+                {{/if}}
                 <a id="logoutBtn" class="button" href="/logout">Изход</a>
+                <a id="basket" class="button" href="/cart"><img class="logo" src="/static/images/cart.jpg"/></a>
                 {{else}}
                 <a class="button" href="/login">Вход</a>
                 <a class="button" href="/register">Регистрация</a>

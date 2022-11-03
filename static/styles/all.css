@@ -11,6 +11,7 @@ body {
 .errorBox {
     background: #296EA7;
 }
+
 .notification {
     position: fixed;
     z-index: 10;
@@ -50,7 +51,8 @@ body {
 
 .login form,
 .register form,
-.create form, .edit form {
+.create form,
+.edit form {
     margin: 5rem auto;
 }
 
@@ -119,9 +121,17 @@ img {
 .detailsMyBooks>p:nth-child(2),
 .deleteBook>p:nth-child(2),
 .otherBooks>p:nth-child(2),
-.myBooks>p:nth-child(2) {
-    font-size: 1.2rem;
-    font-weight: bold;
+.otherBooks>p:nth-child(3),
+.otherBooks>p:nth-child(4)
+ {
+    margin: 5px
+}
+
+.otherBooks>p:first-child {
+    font-size: 22px
+}
+.options{
+    margin: 5px
 }
 
 .dashboard>nav>ul {
@@ -162,6 +172,7 @@ div.actions {
     display: flex;
     justify-content: center;
 }
+
 div.actions a {
     margin-right: 10px;
     height: 25px;
@@ -176,7 +187,7 @@ div.actions a {
 
 .my-books .my-books-list,
 .dashboard .other-books-list {
-    display: flex;
+    display: inline;
     justify-content: space-around;
     flex-wrap: wrap;
 }
@@ -211,11 +222,11 @@ textarea#description {
 }
 
 .otherBooks {
-    border-radius: 10px;
+    border-radius: 40px;
     text-align: center;
     margin: 2rem;
-    position: relative;
-    width: 400px;
+    position: static;
+    width: 300px;
     height: auto;
     transition: all 0.3s cubic-bezier(.50, .80, .25, 1);
     box-shadow: -8px -2px 28px -8px #000000;
@@ -227,21 +238,27 @@ textarea#description {
     box-shadow: 30px 30px 100px 10px #000000;
 }
 
-.details > .book-information > .img {
+.qty {
+    width: 3rem;
+}
+
+
+.details>.book-information>.img {
     width: 60%;
     align-items: center;
 }
-.details > .book-information > .button {
+
+.details>.book-information>.button {
     width: 30%;
     text-align: center;
 }
 
 .details {
-    margin:  30px;
+    margin: 30px;
 }
 
 .likes {
     font-size: 20px;
-    text-shadow:4px 4px 8px blue;
+    text-shadow: 4px 4px 8px blue;
     text-align: center;
 }
