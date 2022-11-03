@@ -10,33 +10,36 @@
 
 <body>
     <div id="container">
+        {{#if errors}}
+        <div class="notification errorBox">
+            {{#each errors}}
+            <span>{{this}}</span>
+            {{/each}}
+        </div>
+        {{/if}}
+        <nav class="navbar">
 
-        <header id="site-header">
-
-            <nav class="navbar">
-
-                <div id="left-buttons">
-                    <a class="button" href="/backery">Печива</a>
-                    <a class="button" href="/products">Материали</a>
-                    <a class="button" href="/about">Контакти</a>
-                </div>
-                {{#if admin}}
-                <div id="admin">
-                    <a class="button" href="/add">Добави</a>
-                </div>
+            <div id="left-buttons">
+                <a class="button" href="/catalog/backery">Печива</a>
+                <a class="button" href="/catalog/mats">Материали</a>
+                <a class="button" href="/about">Контакти</a>
+            </div>
+            {{#if admin}}
+            <div id="admin">
+                <a class="button" href="/add">Добави</a>
+            </div>
+            {{/if}}
+            <div id="right-buttons">
+                {{#if user}}
+                <span>Здравей, {email}</span>
+                <a id="logoutBtn" class="button" href="/logout">Изход</a>
+                {{else}}
+                <a class="button" href="/login">Вход</a>
+                <a class="button" href="/register">Регистрация</a>
                 {{/if}}
-                <div id="right-buttons">
-                    {{#if user}}
-                    <span>Здравей, {email}</span>
-                    <a id="logoutBtn" class="button" href="javascript:void(0)">Изход</a>
-                    {{else}}
-                    <a class="button" href="/login">Вход</a>
-                    <a class="button" href="/register">Регистрация</a>
-                    {{/if}}
-                </div>
+            </div>
 
-            </nav>
-        </header>
+        </nav>
 
         <main id="site-content">
             {{{body}}}

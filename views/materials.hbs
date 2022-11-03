@@ -1,0 +1,23 @@
+<section id="dashboard-page" class="dashboard">
+    {{#if backery}}
+    <ul class="other-books-list">
+        {{#each backery}}
+        <li class="otherBooks">
+            <h5>{{name}}</h5>
+            <p class="img"><img src="{{img}}"></p>
+            <p>{{price}} лв</p>
+            <a class="button" href="/details/{{_id}}">Описание</a>
+
+            <div class="options">
+                <span>Количество: <input class="qty" type="number" /></span>
+
+                <a id="add" class="button" href="javascript:void(0)">Добави</a>
+            </div>
+
+        </li>
+        {{/each}}
+    </ul>
+    {{else}}
+    <p class="no-books">Няма налични материали.</p>
+    {{/if}}
+</section>
