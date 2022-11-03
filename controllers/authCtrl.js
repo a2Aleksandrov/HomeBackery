@@ -6,7 +6,6 @@ const registerController = require('express').Router();
 const loginController = require('express').Router();
 const logoutController = require('express').Router();
 
-
 registerController.get('/', (req, res) => {
 
     res.render('register', {
@@ -66,7 +65,7 @@ loginController.post('/', async (req, res) => {
             title: 'Login Page',
             errors,
             body: {
-                email: req.body.email
+                email: req.body.email,
             }
         });
     }

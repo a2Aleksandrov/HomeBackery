@@ -1,7 +1,9 @@
 const { parseError } = require("../util/parser");
+const data = require('../connData');
 
 function hasUser() {
     return (req, res, next) => {
+        
         if (req.user) {
             next();
         } else {
@@ -14,19 +16,17 @@ function hasUser() {
     }
 }
 
-function isGuest() {
+function isAdmin() {
     return (req, res, next) => {
-        if (req.user) {
-            res.redirect('/');
-        } else {
-            next();
+
+        if (req.user && req.user.email == data.admin) {
+            req.user.admin = true;
         }
+        next();
     }
 }
 
-
-
 module.exports = {
     hasUser,
-    isGuest,
+    isAdmin,
 }
