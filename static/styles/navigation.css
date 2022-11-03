@@ -1,0 +1,30 @@
+nav.navbar {
+    display: flexbox;
+    letter-spacing: 0.05rem;
+    background: #234465;
+    padding: 0.8rem 1rem;
+    color: white;
+}
+
+.button:hover,
+nav.navbar ul li a:hover,
+nav.navbar ul li:hover>a {
+    background: lightsalmon;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+}
+
+#left-buttons {
+    display:inline-flex;
+}
+
+#right-buttons {
+    display:inline-flex;
+    position: relative;
+    float: right;
+}
+
+#admin {
+    display:inline-flex;
+    padding-left: 20rem;
+}
