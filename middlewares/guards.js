@@ -31,7 +31,7 @@ function hasAccess() {
 
         if (req.user && req.user.email == data.admin) {
 
-            next();
+          return  next();
         }
         res.redirect('/404');
     }

@@ -15,7 +15,7 @@ module.exports = (app) => {
     app.use('/login', auth.loginController);
     app.use('/logout', auth.logoutController);
     app.use('/catalog', catalogController);
-    app.use('/add', hasAccess(), addController);
+    app.use('/add',hasAccess(), addController);
     app.use('/about', aboutController);
 
     app.all('/*', notFoundController);
