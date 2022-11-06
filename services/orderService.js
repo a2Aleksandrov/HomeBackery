@@ -5,7 +5,11 @@ function getAllOrders() {
 }
 
 function getOrderByUser(email) {
-    return Order.findOne({ email });
+    return Order.findOne({ client: email }).exec();
+}
+
+function getOrderById(id) {
+    return Order.findById(id);
 }
 
 function createOrder(data) {
@@ -23,6 +27,7 @@ function deleteOrder(orderId) {
 module.exports = {
     getAllOrders,
     getOrderByUser,
+    getOrderById,
     createOrder,
     updateOrder,
     deleteOrder

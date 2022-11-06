@@ -1,9 +1,16 @@
 <section class="orders">
-    {{#each orders}}
-    <div>
-        {{#each products}}
-        <p>{{name}}</p><p>{{quantity}}</p>
-        {{/each}}
-    </div>
-    {{/each}}
+    {{#if userOrder}}
+    <dir class="oderContainer">
+
+        <div>
+            {{#each orders.products}}
+            <p>{{name}}</p>
+            <p>{{quantity}}</p>
+            {{/each}}
+        </div>
+
+    </dir>
+    {{else}}
+    <p>Все още нямате направена поръчка</p>
+    {{/if}}
 </section>

@@ -1,35 +1,37 @@
-const { getOrderByUser, createOrder, updateOrder } = require('../services/orderService');
+const { createOrder, updateOrder, getOrderByUser } = require('../services/orderService');
 const { getAllBackery, checkId, getBackeryById, getMaterialById } = require('../services/productsService');
 
 const orderController = require('express').Router();
 
 orderController.post('/:id', async (req, res) => {
-    const email = req.user.email;
-    let order = await getOrderByUser({ email });
+
+    let order = await getOrderByUser(req.user.email);
+    
     let data = {};
     if (order == null) {
 
         data = {
             client: req.user.email,
             products: [],
-            totalprice: 0
+            totalprice: 0,
+            orderedBy: req.user._id
         }
-        await createOrder(data);
+        order = await createOrder(data);
     }
-    order = await getOrderByUser({ email });
-
+    
     const AllBackeries = await getAllBackery();
 
     let isBackery = checkId(req.params.id, AllBackeries);
     let current;
     let item = {};
-    
+
     if (isBackery) {
         current = await getBackeryById(req.params.id);
 
     } else {
         current = await getMaterialById(req.params.id);
     }
+
     item.name = current.name;
     item.quantity = req.body.quantity;
 
@@ -39,7 +41,7 @@ orderController.post('/:id', async (req, res) => {
     data.totalPrice = order.totalPrice;
 
     const updated = await updateOrder(order._id, data);
-    
+
     res.redirect('/catalog/backery');
 });
 

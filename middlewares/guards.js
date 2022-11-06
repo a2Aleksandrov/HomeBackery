@@ -31,7 +31,16 @@ function hasAccess() {
 
         if (req.user && req.user.email == data.admin) {
 
-          return  next();
+            return next();
+        }
+        res.redirect('/404');
+    }
+}
+
+function hasOrder() {
+    return (req, res, next) => {
+        if (req.user) {
+            return next();
         }
         res.redirect('/404');
     }
@@ -40,5 +49,6 @@ function hasAccess() {
 module.exports = {
     hasUser,
     isAdmin,
-    hasAccess
+    hasAccess,
+    hasOrder
 }
