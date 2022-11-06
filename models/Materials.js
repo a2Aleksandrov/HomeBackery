@@ -5,6 +5,10 @@ const materialsSchema = new Schema({
         type: String,
         required: true
     },
+    type: {
+        type: String,
+        default: 'материали'
+    },
     img: {
         type: String,
         required: true
@@ -16,6 +20,10 @@ const materialsSchema = new Schema({
     price: {
         type: Number,
         required: true
+    },
+    quantity: {
+        type: Number,
+        default: 0
     },
     owner: {
         type: Types.ObjectId,

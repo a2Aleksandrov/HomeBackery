@@ -5,6 +5,10 @@ const backerySchema = new Schema({
         type: String,
         required: true
     },
+    type: {
+        type: String,
+        default: 'печива'
+    },
     img: {
         type: String,
         required: true
@@ -16,6 +20,10 @@ const backerySchema = new Schema({
     price: {
         type: Number,
         required: true,
+    },
+    quantity: {
+        type: Number,
+        default: 0
     },
     likes: {
         type: Types.ObjectId,

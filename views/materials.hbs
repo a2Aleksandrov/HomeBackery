@@ -1,20 +1,23 @@
 <section id="dashboard-page" class="dashboard">
-    {{#if backery}}
+    {{#if materials}}
     <ul class="other-books-list">
-        {{#each backery}}
-        <li class="otherBooks">
-            <h5>{{name}}</h5>
-            <p class="img"><img src="{{img}}"></p>
-            <p>{{price}} лв</p>
-            <a class="button" href="/details/{{_id}}">Описание</a>
+        {{#each materials}}
+        <form action="/order/{{_id}}" method="post">
+            <li class="otherBooks">
+                <p><strong>{{name}}</strong></p>
+                <p class="img"><img src="{{img}}"></p>
+                <p>{{price}} лв</p>
+                <a class="button" href="/details/{{_id}}">Описание</a>
+                {{#if ../user}}
+                <div class="options">
 
-            <div class="options">
-                <span>Количество: <input class="qty" type="number" /></span>
+                    <span>Количество: <input class="qty" name="quantity" id="quantity" type="number" /></span>
 
-                <a id="add" class="button" href="javascript:void(0)">Добави</a>
-            </div>
-
-        </li>
+                    <input type="submit" id="add" class="button" href="/order/{{_id}}" value="Добави" />
+                </div>
+                {{/if}}
+            </li>
+        </form>
         {{/each}}
     </ul>
     {{else}}

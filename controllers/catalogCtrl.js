@@ -13,12 +13,12 @@ catalogController.get('/backery', async (req, res) => {
     });
 });
 
-catalogController.get('/mats', async (req, res) => {
+catalogController.get('/materials', async (req, res) => {
     const materials = await getAllMaterials().lean();
     res.render('materials', {
         title: 'Materials Catalog',
-        user: req.user,
-        materials
+        materials,
+        user: req.user
     });
 });
 

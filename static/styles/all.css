@@ -242,7 +242,12 @@ textarea#description {
     width: 3rem;
 }
 
-
+.book-information {
+    width: 45rem;
+}
+.actions>.likes {
+    padding-right: 34rem;
+}
 .details>.book-information>.img {
     width: 60%;
     align-items: center;

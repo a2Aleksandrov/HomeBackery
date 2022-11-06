@@ -1,0 +1,23 @@
+<section id="details-page" class="details">
+    
+    <div class="book-information">
+        <h3>{{backery.name}}</h3>
+        
+        <p class="img"><img src="{{backery.img}}"></p>
+        <div class="actions">
+            
+            <a class="button" href="javascript:void(0)">Like</a>
+
+            <!-- ( for Guests and Users )  -->
+            <div class="likes">
+                <a href="/likes" id="total-likes">0</a>     
+                <img class="hearts" src="/static/images/heart.png">
+            </div>
+            <!-- Bonus -->
+        </div>
+    </div>
+    <div class="book-description">
+        <h3>Описание:</h3>
+        <p>{{backery.description}}</p>
+    </div>
+</section>

@@ -41,6 +41,16 @@ function deleteMaterial(materialId) {
     return Backery.findByIdAndRemove(materialId);
 }
 
+function checkId(testedId, AllBackeries) {
+    let isBakery = false;
+    for (let one of AllBackeries) {
+        if (one._id == testedId) {
+            isBakery = true;
+            break;
+        }
+    }
+    return isBakery;
+}
 
 module.exports = {
     getAllBackery,
@@ -52,5 +62,6 @@ module.exports = {
     editBackery,
     editMaterial,
     deleteBackery,
-    deleteMaterial
+    deleteMaterial,
+    checkId
 }
