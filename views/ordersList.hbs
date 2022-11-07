@@ -1,0 +1,37 @@
+<section id="dashboard-page" class="dashboard">
+    {{#if orders}}
+    <ul class="other-books-list">
+        {{#each orders}}
+        <li class="otherBooks">
+            <p class="field">
+                <label for="description">продукти:</label>
+                <span class="input">
+                    {{#each products}}
+                    <div>{{name}} -- {{quantity}} бр.</div>
+                    {{/each}}
+                </span>
+            </p>
+            <p class="field">
+                <label for="image">Общо:</label>
+                <span class="input">
+                    <div>{{totalPrice}}лв.</div>
+                </span>
+            </p>
+            <p class="field">
+                <label for="description">данни за клиента:</label>
+                <span class="input">
+                    <div>{{name}}</div>
+                    <div>{{address}}</div>
+                    <div>{{phone}}</div>
+                    <div>{{client   }}</div>
+                    
+                </span>
+            </p>
+            <a class="button" href="">Приключи</a>
+        </li>
+        {{/each}}
+    </ul>
+    {{else}}
+    <p class="no-books">Няма нови поръчки.</p>
+    {{/if}}
+</section>

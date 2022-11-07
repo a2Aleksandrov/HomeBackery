@@ -2,7 +2,7 @@
     {{#if backery}}
     <ul class="other-books-list">
         {{#each backery}}
-        <form action="/order/{{_id}}" method="post">
+        <form action="/order/{{_id}}" method="post" class="backery">
             <li class="otherBooks">
                 <p><strong>{{name}}</strong></p>
                 <p class="img"><img src="{{img}}"></p>

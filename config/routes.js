@@ -8,6 +8,7 @@ const cartController = require("../controllers/cartCtrl");
 const aboutController = require("../controllers/aboutCtrl");
 const notFoundController = require("../controllers/404Ctrl");
 const orderController = require("../controllers/orderCtrl");
+const ordersListController = require("../controllers/allOrdersCtrl");
 
 
 module.exports = (app) => {
@@ -21,6 +22,7 @@ module.exports = (app) => {
     app.use('/details', detailsController);
     app.use('/order', orderController);
     app.use('/add', hasAccess(), addController);
+    app.use('/ordersList', hasAccess(), ordersListController);
     app.use('/cart', hasOrder(), cartController);
     app.use('/about', aboutController);
 
