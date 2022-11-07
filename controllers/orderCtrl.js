@@ -6,7 +6,7 @@ const orderController = require('express').Router();
 orderController.post('/:id', async (req, res) => {
 
     let order = await getOrderByUser(req.user.email);
-    
+    console.log(order);
     let data = {};
     if (order == null) {
 
