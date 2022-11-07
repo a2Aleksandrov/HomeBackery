@@ -17,6 +17,22 @@ const orderSchema = new Schema({
         type: Types.ObjectId,
         ref: 'User'
     },
+    name: {
+        type: String,
+        required: true,
+        default: '****'
+    },
+    phone: {
+        type: String,
+        minlength: [10, 'Телефонният номер трябва да е поне 10 символа.'],
+        maxlength: [17, 'Телефонният номер трябва да е максимум 17 символа.'],
+        default: '**********'
+    },
+    address: {
+        type: String,
+        required: true,
+        default: '****'
+    },
     accepted: {
         type: Boolean,
         default: false

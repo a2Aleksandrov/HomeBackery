@@ -1,5 +1,5 @@
 const { createOrder, updateOrder, getOrderByUser } = require('../services/orderService');
-const { getAllBackery, checkId, getBackeryById, getMaterialById } = require('../services/productsService');
+const { getAllBackery, checkId, getBackeryById, getMaterialById, getAllMaterials } = require('../services/productsService');
 const { parseError } = require('../util/parser');
 
 const orderController = require('express').Router();
@@ -7,12 +7,26 @@ const orderController = require('express').Router();
 orderController.post('/:id', async (req, res) => {
     let isBackery = false;
     try {
+        const AllBackeries = await getAllBackery();
+
+        isBackery = checkId(req.params.id, AllBackeries);
+
+        let current;
+        let item = {};
+        let data = {};
+
+        if (isBackery) {
+            current = await getBackeryById(req.params.id);
+
+        } else {
+            current = await getMaterialById(req.params.id);
+        }
+
         if (!req.body.quantity || req.body.quantity <= 0) {
             throw new Error('Моля въведете количество по голямо от 0.');
         }
-        let order = await getOrderByUser(req.user.email);
 
-        let data = {};
+        let order = await getOrderByUser(req.user.email);
         if (order == null) {
 
             data = {
@@ -22,19 +36,6 @@ orderController.post('/:id', async (req, res) => {
                 orderedBy: req.user._id
             }
             order = await createOrder(data);
-        }
-
-        const AllBackeries = await getAllBackery();
-
-        isBackery = checkId(req.params.id, AllBackeries);
-        let current;
-        let item = {};
-
-        if (isBackery) {
-            current = await getBackeryById(req.params.id);
-
-        } else {
-            current = await getMaterialById(req.params.id);
         }
 
         item.name = current.name;
@@ -50,11 +51,23 @@ orderController.post('/:id', async (req, res) => {
         isBackery ? res.redirect('/catalog/backery') : res.redirect('/catalog/materials');
 
     } catch (error) {
-        isBackery ?
-            res.render('backery', { user: req.user, errors: parseError(error) })
-            :
-            res.render('materials', { user: req.user, errors: parseError(error) });
-
+        if (isBackery) {
+            let backery = await getAllBackery().lean();
+            res.render('backery', {
+                title: 'Backery Page',
+                user: req.user,
+                errors: parseError(error),
+                backery
+            });
+        } else {
+            let materials = await getAllMaterials().lean();
+            res.render('materials', {
+                title: 'Materials Page',
+                user: req.user,
+                errors: parseError(error),
+                materials
+            });
+        }
     }
 });
 

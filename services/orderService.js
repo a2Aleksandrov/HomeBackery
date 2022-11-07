@@ -6,7 +6,7 @@ function getAllOrders() {
 }
 
 function getOrderByUser(email) {
-    return Order.findOne({ client: email });
+    return Order.findOne({ client: email, accepted: false });
 }
 
 function getOrderById(id) {
