@@ -1,5 +1,6 @@
 const Order = require("../models/Order");
 
+
 function getAllOrders() {
     return Order.find({});
 }

@@ -16,6 +16,10 @@ const orderSchema = new Schema({
     orderedBy: {
         type: Types.ObjectId,
         ref: 'User'
+    },
+    accepted: {
+        type: Boolean,
+        default: false
     }
 });
 
