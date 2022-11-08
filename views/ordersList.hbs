@@ -3,6 +3,10 @@
     <ul class="other-books-list">
         {{#each orders}}
         <li class="otherBooks">
+            {{#if accepted}}
+            {{else}}
+            <div style="color:red"><strong>непотвърдена</strong></div>
+            {{/if}}
             <p class="field">
                 <label for="description">продукти:</label>
                 <span class="input">
@@ -23,11 +27,12 @@
                     <div>{{name}}</div>
                     <div>{{address}}</div>
                     <div>{{phone}}</div>
-                    <div>{{client   }}</div>
-                    
+                    <div>{{client }}</div>
+
+
                 </span>
             </p>
-            <a class="button" href="">Приключи</a>
+            <a class="button" href="/ordersList/{{_id}}/delete">Приключи</a>
         </li>
         {{/each}}
     </ul>
