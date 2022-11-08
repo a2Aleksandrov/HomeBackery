@@ -1,14 +1,14 @@
-let btn = document.querySelector('#validateBtn');
-let msg = document.querySelector('#validate');
-let qty = document.querySelector('.qty').addEventListener('input', isValid);
+document.querySelector('.other-books-list').addEventListener('input', isValid);
 
 function isValid(e) {
     e.preventDefault();
-    if (Number(e.target.value) <= 0 && e.target.value != '') {
-        msg.style.display = 'inline';
-        btn.style.display = 'none';
-    } else {
-        msg.style.display = 'none';
-        btn.style.display = '';
+    if (e.target.className == 'qty') {
+        if (Number(e.target.value) <= 0 && e.target.value != '') {
+            e.target.parentElement.parentElement.querySelector('p').style.display = 'inline';
+            e.target.parentElement.parentElement.lastElementChild.style.display = 'none';
+        } else {
+            e.target.parentElement.parentElement.querySelector('p').style.display = 'none';
+            e.target.parentElement.parentElement.lastElementChild.style.display = '';
+        }
     }
 }

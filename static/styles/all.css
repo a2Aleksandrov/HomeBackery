@@ -285,4 +285,7 @@ textarea#description {
 
 }
 
-.backery {}
+.options>p {
+    color: red;
+    display: none;
+}
