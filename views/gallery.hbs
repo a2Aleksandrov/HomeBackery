@@ -1,0 +1,29 @@
+<section class="create">
+    {{#if user.admin}}
+    <form action="/gallery" method="post">
+        <fieldset>
+            <legend>Добави в галерия</legend>
+
+            <p class="field">
+                <label for="image">Снимка:</label>
+                <span class="input">
+                    <input type="text" name="img" id="image" placeholder="Image" value="{{data.img}}">
+                </span>
+            </p>
+
+            <input class="button submit" type="submit" value="Добави">
+        </fieldset>
+    </form>
+    {{/if}}
+    {{#if images}}
+    <ul class="gallery">
+        {{#each images}}
+        <li class="image">
+            <img src="{{img}}"/>
+        </li>
+        {{/each}}
+    </ul>
+    {{else}}
+    <p>Все още няма качени снимки</p>
+    {{/if}}
+</section>

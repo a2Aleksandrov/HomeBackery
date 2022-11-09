@@ -9,6 +9,7 @@ const aboutController = require("../controllers/aboutCtrl");
 const notFoundController = require("../controllers/404Ctrl");
 const orderController = require("../controllers/orderCtrl");
 const ordersListController = require("../controllers/allOrdersCtrl");
+const galleryController = require("../controllers/galleryCtrl");
 
 
 module.exports = (app) => {
@@ -19,13 +20,13 @@ module.exports = (app) => {
     app.use('/login', auth.loginController);
     app.use('/logout', auth.logoutController);
     app.use('/catalog', catalogController);
+    app.use('/gallery', galleryController);
     app.use('/details', detailsController);
+    app.use('/cart', hasOrder(), cartController);
     app.use('/order', orderController);
     app.use('/add', hasAccess(), addController);
     app.use('/ordersList', hasAccess(), ordersListController);
-    app.use('/cart', hasOrder(), cartController);
     app.use('/about', aboutController);
-
     app.all('/*', notFoundController);
 }
 
