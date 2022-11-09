@@ -289,3 +289,15 @@ textarea#description {
     color: red;
     display: none;
 }
+
+.gallery {
+    display: inline;
+
+}
+
+.gallery>img {
+    position: relative;
+    display: inline;
+    width: 10rem;
+    margin: 1rem
+}

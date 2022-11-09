@@ -15,15 +15,17 @@
         </fieldset>
     </form>
     {{/if}}
+
     {{#if images}}
-    <ul class="gallery">
+    <div class="gallery">
+
         {{#each images}}
-        <li class="image">
-            <img src="{{img}}"/>
-        </li>
+        <img src="{{img}}" />
         {{/each}}
-    </ul>
+
+    </div>
     {{else}}
     <p>Все още няма качени снимки</p>
     {{/if}}
+
 </section>

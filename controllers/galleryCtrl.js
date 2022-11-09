@@ -5,7 +5,7 @@ const galleryController = require('express').Router();
 
 galleryController.get('/', async (req, res) => {
     const images = await getAllImages().lean();
-    console.log(images);
+    
     res.render('gallery', {
         title: 'Gallery Page',
         user: req.user,

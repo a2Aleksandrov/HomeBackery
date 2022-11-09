@@ -43,9 +43,7 @@ ul, ol {
 	padding-left: 2em;
 }
 
-li {
-	list-style-position: inside;
-}
+
 blockquote {
 	width: 80%;
 	margin: 0 auto;
