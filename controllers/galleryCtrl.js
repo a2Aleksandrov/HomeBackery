@@ -14,7 +14,7 @@ galleryController.get('/', async (req, res) => {
 });
 
 galleryController.post('/', async (req, res) => {
-    const images = await getAllImages();
+    const images = await getAllImages().lean();
 
     const data = {
         img: req.body.img

@@ -1,22 +1,26 @@
-<section id="login-page" class="login">
-    <form id="login-form" action="/login" method="post">
+<section class="login">
+    <form action="/login" method="post">
         <fieldset>
+
             <p class="field">
                 <label for="email">Имейл:</label>
                 <span class="input">
-                    <input type="text" name="email" id="email" placeholder="email" value="{{body.email}}">
+                    <input type="text" name="email" placeholder="email" value="{{body.email}}">
                 </span>
             </p>
+
             <p class="field">
                 <label for="password">Парола:</label>
                 <span class="input">
-                    <input type="password" name="password" id="password" placeholder="Password">
+                    <input type="password" name="password" placeholder="Password">
                 </span>
             </p>
+
             <p class="field">
                 Все още нямате профил ? - <a href="/register">Регистрация</a>
             </p>
-            <input class="formBtn" type="submit" value="Вход">
+            
+            <input id="login" class="button" type="submit" value="Вход">
         </fieldset>
     </form>
 </section>

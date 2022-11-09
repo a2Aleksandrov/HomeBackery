@@ -1,4 +1,4 @@
-<section id="create-page" class="create">
+<section class="create">
     {{#if order}}
     <form action="/cart/order" method="post">
         <fieldset>
@@ -19,34 +19,36 @@
                     <div>{{order.totalPrice}}лв.</div>
                 </span>
             </p>
+
             <p class="field">
                 <label for="image">Име:</label>
                 <span class="input">
-                    <input type="text" name="name" id="phone" placeholder="name" >
+                    <input type="text" name="name" placeholder="name" >
                 </span>
             </p>
+
             <p class="field">
                 <label for="description">Адрес за доставка:</label>
                 <span class="input">
-                    <textarea name="address" id="description" placeholder="address"></textarea>
+                    <textarea name="address" placeholder="address"></textarea>
                 </span>
             </p>
 
             <p class="field">
                 <label for="image">Телефон за връзка:</label>
                 <span class="input">
-                    <input type="text" name="phone" id="phone" placeholder="phone number">
+                    <input type="text" name="phone" placeholder="phone number">
                 </span>
             </p>
+
             <input type="submit" id="accept" class="button" value="Потвърди" />
             <a href="/cart/order/delete" class="button submit">Откажи</a>
 
         </fieldset>
     </form>
     {{else}}
-    <p class="field">
+    <p id="emptyField" class="field">
         Все още нямате нищо добавено в кошницата.
     </p>
     {{/if}}
-
 </section>

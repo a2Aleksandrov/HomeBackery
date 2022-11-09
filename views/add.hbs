@@ -1,46 +1,44 @@
-<section id="create-page" class="create">
-
-    <form id="create-form" action="/add" method="post">
+<section class="create">
+    <form action="/add" method="post">
         <fieldset>
             <legend>Добави продукт</legend>
+
             <p class="field">
                 <label for="title">Име:</label>
                 <span class="input">
-                    <input type="text" name="name" id="name" placeholder="Name" value="{{data.name}}">
+                    <input type="text" name="name" placeholder="Name" value="{{data.name}}">
                 </span>
             </p>
 
             <p class="field">
                 <label for="image">Снимка:</label>
                 <span class="input">
-                    <input type="text" name="img" id="image" placeholder="Image" value="{{data.img}}">
+                    <input type="text" name="img" placeholder="Image" value="{{data.img}}">
                 </span>
             </p>
 
             <p class="field">
                 <label for="description">Описание:</label>
                 <span class="input">
-                    <textarea name="description" id="description"
-                        placeholder="Description">{{data.description}}</textarea>
+                    <textarea name="description" placeholder="Description">{{data.description}}</textarea>
                 </span>
             </p>
 
             <p class="field">
                 <label for="image">Цена:</label>
                 <span class="input">
-                    <input type="text" name="price" id="price" placeholder="Price" value="{{data.price}}">
+                    <input type="text" name="price" placeholder="Price" value="{{data.price}}">
                 </span>
             </p>
 
             <p class="field">
-
                 <label for="type">Тип на продукта:</label>
                 <span class="input">
-                    <input type="text" name="type" id="type" placeholder="backery or materials" value="{{body.type}}">
+                    <input type="text" name="type" placeholder="backery or materials" value="{{body.type}}">
                 </span>
             </p>
 
-            <input class="button submit" type="submit" value="Добави">
+            <input class="button" type="submit" value="Добави">
         </fieldset>
     </form>
 </section>

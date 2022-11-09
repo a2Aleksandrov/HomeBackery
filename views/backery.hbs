@@ -1,26 +1,28 @@
-<section id="dashboard-page" class="dashboard">
+<section class="dashboard">
     {{#if backery}}
-    <ul class="other-books-list">
+    <ul class="product">
         {{#each backery}}
         <form action="/order/{{_id}}" method="post" class="backery">
-            <li class="otherBooks">
+            <li class="everyProduct">
                 <p><strong>{{name}}</strong></p>
                 <p class="img"><img src="{{img}}"></p>
                 <p>{{price}} лв</p>
                 <a class="button" href="/details/{{_id}}">Описание</a>
                 {{#if ../user}}
                 <div class="options">
-                    <span>Количество: <input class="qty" name="quantity" id="quantity" type="number" /></span>
-                    <p><strong>Моля въведете положително число.</strong></p>
+
+                    <span>Количество:&nbsp;<input class="qty" name="quantity" type="number" /></span>
                     <input type="submit" class="button" value="Добави" />
+
                 </div>
+                <p id="validate">Моля въведете положително число.</p>
                 {{/if}}
             </li>
         </form>
         {{/each}}
     </ul>
     {{else}}
-    <p class="no-books">Все още няма печива.</p>
+    <p id="emptyField" class="no-products">Все още няма печива.</p>
     {{/if}}
 </section>
 

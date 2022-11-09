@@ -1,25 +1,31 @@
-<section id="details-page" class="details">
+<section class="details">
+    <div class="product-info">
 
-    <div class="book-information">
         <h3>{{backery.name}}</h3>
-
         <p class="img"><img src="{{backery.img}}"></p>
         <div class="actions">
+
             {{#if user}}
             {{#if hasLiked}}
             {{else}}
-            <form method="post">
-                <input type="submit" class="button" value="Like" />
-            </form>
+            <div class="likeBtn">
+                <form method="post">
+                    <input type="submit" class="button" value="Like" />
+                </form>
+
+            </div>
             {{/if}}
             {{/if}}
             <div class="likes">
-                <span>{{backery.likes}}</span><img class="hearts" src="/static/images/heart.png" />
+                <span class="">{{backery.likes}}</span><img class="hearts" src="/static/images/heart.png" />
             </div>
         </div>
     </div>
-    <div class="book-description">
+
+    <div class="product-description">
+
         <h3>Описание:</h3>
         <p>{{backery.description}}</p>
+
     </div>
 </section>

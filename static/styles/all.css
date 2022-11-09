@@ -49,6 +49,11 @@ body {
     text-align: center;
 }
 
+#login,
+#register {
+    width: 100%;
+}
+
 .login form,
 .register form,
 .create form,
@@ -108,10 +113,9 @@ img {
     padding-top: 100%;
 }
 
-.detailsOtherBooks,
 .detailsMyBooks,
 .deleteBook,
-.otherBooks,
+.everyProduct,
 .myBooks {
     display: inline-flex;
     flex-direction: column;
@@ -120,18 +124,34 @@ img {
 
 .detailsMyBooks>p:nth-child(2),
 .deleteBook>p:nth-child(2),
-.otherBooks>p:nth-child(2),
-.otherBooks>p:nth-child(3),
-.otherBooks>p:nth-child(4) {
+.everyProduct>p:nth-child(2),
+.everyProduct>p:nth-child(3),
+.everyProduct>p:nth-child(4) {
     margin: 5px
 }
 
-.otherBooks>p:first-child {
+.everyProduct>p:first-child {
     font-size: 22px
 }
 
 .options {
-    margin: 5px
+    margin: 0;
+}
+
+.options>span {
+    display: flex;
+    margin-top: 7px;
+    margin-bottom: 7px;
+    align-items: center;
+}
+
+.options>span>.qty {
+    height: 1.5rem;
+}
+
+#validate {
+    color: red;
+    display: none;
 }
 
 .dashboard>nav>ul {
@@ -162,20 +182,28 @@ h3 {
 }
 
 img.hearts {
-    width: 32px;
-    height: 30px;
+    width: 30px;
+    height: 28px;
     position: relative;
     display: inline-block;
+    padding-left: 10px;
 }
 
-div.actions {
+
+
+.likeBtn {
+    position: fixed;
+    left: 30rem;
+    bottom: 11rem
+ }
+
+.likes {
     display: flex;
-    justify-content: center;
-}
-
-div.actions a {
-    margin-right: 10px;
-    height: 25px;
+    font-size: 20px;
+    align-items: center;
+    position: fixed;
+    left: 36rem;
+    bottom: 11.5rem
 }
 
 .deleteBook>form,
@@ -186,7 +214,7 @@ div.actions a {
 }
 
 .my-books .my-books-list,
-.dashboard .other-books-list {
+.dashboard .product {
     display: flex;
     flex-wrap: wrap;
 }
@@ -209,7 +237,7 @@ footer p {
     color: white;
 }
 
-.no-books {
+.no-products {
     font-weight: bold;
     font-size: large;
     text-align: center;
@@ -220,7 +248,7 @@ textarea#description {
     resize: none;
 }
 
-.otherBooks {
+.everyProduct {
     border-radius: 40px;
     text-align: center;
     margin: 2rem;
@@ -233,7 +261,7 @@ textarea#description {
 }
 
 
-.otherBooks:hover {
+.everyProduct:hover {
     box-shadow: 30px 30px 100px 10px #000000;
 }
 
@@ -241,20 +269,16 @@ textarea#description {
     width: 3rem;
 }
 
-.book-information {
+.product-info {
     width: 45rem;
 }
 
-.actions>.likes {
-    padding-right: 34rem;
-}
-
-.details>.book-information>.img {
+.details>.product-info>.img {
     width: 60%;
     align-items: center;
 }
 
-.details>.book-information>.button {
+.details>.product-info>.button {
     width: 30%;
     text-align: center;
 }
@@ -263,11 +287,7 @@ textarea#description {
     margin: 30px;
 }
 
-.likes {
-    font-size: 20px;
-    text-shadow: 4px 4px 8px blue;
-    text-align: center;
-}
+
 
 .homePage,
 .notFound,
@@ -285,11 +305,6 @@ textarea#description {
 
 }
 
-.options>p {
-    color: red;
-    display: none;
-}
-
 .gallery {
     display: inline;
 
@@ -300,4 +315,13 @@ textarea#description {
     display: inline;
     width: 10rem;
     margin: 1rem
+}
+
+#emptyField {
+    text-align: center;
+    margin: 15rem;
+}
+
+#msg {
+    color: red;
 }

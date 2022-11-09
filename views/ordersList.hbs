@@ -1,11 +1,11 @@
 <section id="dashboard-page" class="dashboard">
     {{#if orders}}
-    <ul class="other-books-list">
+    <ul class="product">
         {{#each orders}}
-        <li class="otherBooks">
+        <li class="everyProduct">
             {{#if accepted}}
             {{else}}
-            <div style="color:red"><strong>непотвърдена</strong></div>
+            <div id="msg"><strong>непотвърдена</strong></div>
             {{/if}}
             <p class="field">
                 <label for="description">продукти:</label>
@@ -18,17 +18,17 @@
             <p class="field">
                 <label for="image">Общо:</label>
                 <span class="input">
-                    <div>{{totalPrice}}лв.</div>
+                    <div>{{totalPrice}} лв.</div>
                 </span>
             </p>
             <p class="field">
                 <label for="description">данни за клиента:</label>
                 <span class="input">
+
                     <div>{{name}}</div>
                     <div>{{address}}</div>
                     <div>{{phone}}</div>
                     <div>{{client }}</div>
-
 
                 </span>
             </p>
@@ -37,6 +37,6 @@
         {{/each}}
     </ul>
     {{else}}
-    <p class="no-books">Няма нови поръчки.</p>
+    <p class="no-products">Няма нови поръчки.</p>
     {{/if}}
 </section>

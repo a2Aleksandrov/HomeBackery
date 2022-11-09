@@ -1,9 +1,9 @@
-<section id="dashboard-page" class="dashboard">
+<section class="dashboard">
     {{#if materials}}
-    <ul class="other-books-list">
+    <ul class="product">
         {{#each materials}}
         <form action="/order/{{_id}}" method="post">
-            <li class="otherBooks">
+            <li class="everyProduct">
                 <p><strong>{{name}}</strong></p>
                 <p class="img"><img src="{{img}}"></p>
                 <p>{{price}} лв</p>
@@ -11,17 +11,18 @@
                 {{#if ../user}}
                 <div class="options">
 
-                    <span>Количество: <input class="qty" name="quantity" id="quantity" type="number" /></span>
-                    <p id="validate">Моля въведете положително число.</p>
-                    <input type="submit" id="validateBtn" class="button" value="Добави" />
+                    <span>Количество:&nbsp;<input class="qty" name="quantity" type="number" /></span>
+                    <input type="submit" class="button" value="Добави" />
+
                 </div>
+                <p id="validate">Моля въведете положително число.</p>
                 {{/if}}
             </li>
         </form>
         {{/each}}
     </ul>
     {{else}}
-    <p class="no-books">Няма налични материали.</p>
+    <p id="emptyField" class="no-products">Няма налични материали.</p>
     {{/if}}
 </section>
 
