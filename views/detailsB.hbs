@@ -1,19 +1,21 @@
 <section id="details-page" class="details">
-    
+
     <div class="book-information">
         <h3>{{backery.name}}</h3>
-        
+
         <p class="img"><img src="{{backery.img}}"></p>
         <div class="actions">
-            
-            <a class="button" href="javascript:void(0)">Like</a>
-
-            <!-- ( for Guests and Users )  -->
+            {{#if user}}
+            {{#if hasLiked}}
+            {{else}}
+            <form method="post">
+                <input type="submit" class="button" value="Like" />
+            </form>
+            {{/if}}
+            {{/if}}
             <div class="likes">
-                <a href="/likes" id="total-likes">0</a>     
-                <img class="hearts" src="/static/images/heart.png">
+                <span>{{backery.likes}}</span><img class="hearts" src="/static/images/heart.png" />
             </div>
-            <!-- Bonus -->
         </div>
     </div>
     <div class="book-description">
