@@ -16,7 +16,7 @@ body {
     position: fixed;
     z-index: 10;
     top: 6rem;
-    right: 5rem;
+    right: 4rem;
     margin: 1rem auto;
     text-align: center;
     padding: 0.5rem;
@@ -27,14 +27,18 @@ body {
     box-shadow: 0 5px 10px rgb(204, 204, 204);
 }
 
-.basic {
-    background: linear-gradient(rgba(250, 248, 248, 0.2), rgba(25, 167, 173, 0.2));
-    background-size: cover;
-    height: 85vh;
-    position: relative;
-    overflow: hidden;
+.cartMsg {
+    display: none;
+    position: fixed;
+    right: 10px;
+    top: 4.5rem;
+    text-align: center;
+    border-radius: 0.5rem;
+    color: rgb(255, 255, 255);
+    font-style: italic;
+    text-decoration: underline;
+    box-shadow: 0 5px 10px rgb(172, 172, 230);
 }
-
 
 #container {
     width: 100%;
@@ -77,19 +81,6 @@ body {
     margin: 5px;
 }
 
-a {
-    text-decoration: none;
-    display: inline-block;
-}
-
-li {
-    list-style-type: none;
-}
-
-.fa-heart {
-    color: red;
-}
-
 .img {
     width: 15rem;
     position: relative;
@@ -113,17 +104,12 @@ img {
     padding-top: 100%;
 }
 
-.detailsMyBooks,
-.deleteBook,
-.everyProduct,
-.myBooks {
+.everyProduct {
     display: inline-flex;
     flex-direction: column;
     align-items: center;
 }
 
-.detailsMyBooks>p:nth-child(2),
-.deleteBook>p:nth-child(2),
 .everyProduct>p:nth-child(2),
 .everyProduct>p:nth-child(3),
 .everyProduct>p:nth-child(4) {
@@ -168,8 +154,6 @@ img {
     justify-content: center;
 }
 
-.basic h1,
-.my-books h1,
 .dashboard h1 {
     text-align: center;
     margin: 0rem;
@@ -195,7 +179,7 @@ img.hearts {
     position: fixed;
     left: 30rem;
     bottom: 11rem
- }
+}
 
 .likes {
     display: flex;
@@ -206,22 +190,9 @@ img.hearts {
     bottom: 11.5rem
 }
 
-.deleteBook>form,
-.detailsMyBooks>form {
-    display: flex;
-    flex-direction: column;
-    padding-bottom: 1rem;
-}
-
-.my-books .my-books-list,
 .dashboard .product {
     display: flex;
     flex-wrap: wrap;
-}
-
-.detailsMyBooks textarea,
-.my-books textarea {
-    margin-bottom: 2rem;
 }
 
 footer {
@@ -286,8 +257,6 @@ textarea#description {
 .details {
     margin: 30px;
 }
-
-
 
 .homePage,
 .notFound,
