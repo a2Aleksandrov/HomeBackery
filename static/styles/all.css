@@ -212,6 +212,7 @@ footer p {
     font-weight: bold;
     font-size: large;
     text-align: center;
+    margin: 15rem;
 }
 
 textarea#description {
@@ -284,11 +285,6 @@ textarea#description {
     display: inline;
     width: 10rem;
     margin: 1rem
-}
-
-#emptyField {
-    text-align: center;
-    margin: 15rem;
 }
 
 #msg {
