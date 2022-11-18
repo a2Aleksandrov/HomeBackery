@@ -1,5 +1,5 @@
 body {
-    background-image: url("../images/background.png");
+    background-image: url("../images/background2.webp");
     padding: 0px;
     margin: 0px;
     height: 100%;
@@ -105,6 +105,7 @@ img {
 }
 
 .everyProduct {
+    background: #f1e0bf;
     display: inline-flex;
     flex-direction: column;
     align-items: center;
@@ -202,7 +203,7 @@ footer {
 }
 
 footer p {
-    padding: 1rem 0;
+    padding: 5px 0;
     font-weight: bold;
     margin: 0rem;
     color: white;
@@ -253,6 +254,7 @@ textarea#description {
 .details>.product-info>.button {
     width: 30%;
     text-align: center;
+    text-decoration: none;
 }
 
 .details {

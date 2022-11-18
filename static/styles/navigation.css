@@ -12,10 +12,12 @@ nav.navbar ul li:hover>a {
     background: lightsalmon;
     color: rgb(0, 0, 0);
     font-weight: bold;
+    text-decoration: none;
 }
 
 #left-buttons {
     display: inline-flex;
+    margin: 0;
 }
 
 #right-buttons {

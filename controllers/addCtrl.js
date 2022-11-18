@@ -17,7 +17,7 @@ addController.post('/', async (req, res) => {
         type: req.body.type,
         img: req.body.img,
         description: req.body.description,
-        price: Number(req.body.price),
+        price: Number(req.body.price).toFixed(2),
         owner: req.user._id
     }
 

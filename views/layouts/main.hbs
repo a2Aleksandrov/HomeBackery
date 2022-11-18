@@ -4,6 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <link rel="icon" href="/static/images/favicon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="/static/styles/styles.css">
     <title>{{title}}</title>
 </head>
@@ -20,8 +23,22 @@
         <nav class="navbar">
 
             <div id="left-buttons">
-                <a class="button" href="/catalog/backery">Печива</a>
-                <a class="button" href="/catalog/materials">Материали</a>
+                <div class="dropdown">
+                    <button class="button" type="button" data-toggle="dropdown">Печива<span class="caret"></span></button>
+                    <ul class="dropdown-menu">
+                        <li><a href="/404">торти</a></li>
+                        <li><a href="/404">меденки</a></li>
+                        <li><a href="/catalog/backery">други</a></li>
+                    </ul>
+                </div>
+                <div class="dropdown">
+                    <button class="button" type="button" data-toggle="dropdown">Материали<span class="caret"></span></button>
+                    <ul class="dropdown-menu">
+                        <li><a href="/404">пошове</a></li>
+                        <li><a href="/404">фондани</a></li>
+                        <li><a href="/catalog/materials">други</a></li>
+                    </ul>
+                </div>
                 <a class="button" href="/gallery">Галерия</a>
                 <a class="button" href="/about">Контакти</a>
             </div>
