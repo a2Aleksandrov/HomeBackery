@@ -25,17 +25,18 @@ cartController.post('/order', async (req, res) => {
         name: req.body.name,
         address: req.body.address,
         phone: req.body.phone,
+        info: req.body.info,
         accepted: true
     }
 
     const order = await getOrderByUser(req.user.email).lean();
     try {
-        if (Object.values(data).some(v => !v)) {
+        if (data.name == '' || data.address == '' || data.phone == '') {
 
-            throw new Error('Моля попълнете всички полета.');
+            throw new Error('Име, адрес и телефон са задължителни полета.');
         }
         if (data.phone.length < 10 || data.phone.length > 17) {
-            throw new Error('Телефонният номер трябва да е между 10 и 17 символа.')
+            throw new Error('Моля въведете валиден телефонен номер.');
         }
 
         await updateOrder(order._id, data);
