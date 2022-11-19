@@ -40,7 +40,7 @@ cartController.post('/order', async (req, res) => {
         }
 
         await updateOrder(order._id, data);
-        res.redirect('/catalog/backery');
+        res.redirect('/');
 
     } catch (error) {
         res.render('cart', {

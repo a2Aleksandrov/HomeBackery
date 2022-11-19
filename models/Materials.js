@@ -9,6 +9,10 @@ const materialsSchema = new Schema({
         type: String,
         default: 'материали'
     },
+    kind: {
+        type: String,
+        required: true
+    },
     img: {
         type: String,
         required: true

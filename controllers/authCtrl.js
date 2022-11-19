@@ -30,7 +30,7 @@ registerController.post('/', async (req, res) => {
         const token = await register(req.body.username, req.body.email, req.body.password);
 
         res.cookie('token', token, { httpOnly: true });
-        res.redirect('/catalog/backery');
+        res.redirect('/');
     } catch (error) {
         const errors = parseError(error);
 
@@ -57,7 +57,7 @@ loginController.post('/', async (req, res) => {
     try {
         const token = await login(req.body.email, req.body.password);
         res.cookie('token', token, { httpOnly: true });
-        res.redirect('/catalog/backery');
+        res.redirect('/');
     } catch (error) {
         const errors = parseError(error);
 
@@ -73,7 +73,7 @@ loginController.post('/', async (req, res) => {
 
 logoutController.get('/', (req, res) => {
     res.clearCookie('token');
-    res.redirect('/catalog/backery');
+    res.redirect('/');
 });
 
 module.exports = {

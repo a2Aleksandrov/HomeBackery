@@ -9,6 +9,10 @@ const backerySchema = new Schema({
         type: String,
         default: 'печива'
     },
+    kind: {
+        type: String,
+        required: true
+    },
     img: {
         type: String,
         required: true
