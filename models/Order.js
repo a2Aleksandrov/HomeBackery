@@ -33,6 +33,9 @@ const orderSchema = new Schema({
         required: true,
         default: '****'
     },
+    info: {
+        type: String,
+    },
     accepted: {
         type: Boolean,
         default: false
