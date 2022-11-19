@@ -10,6 +10,8 @@ const notFoundController = require("../controllers/404Ctrl");
 const orderController = require("../controllers/orderCtrl");
 const ordersListController = require("../controllers/allOrdersCtrl");
 const galleryController = require("../controllers/galleryCtrl");
+const sendController = require("../controllers/sendCtrl");
+const errorController = require("../controllers/errorCtrl");
 
 
 module.exports = (app) => {
@@ -27,6 +29,7 @@ module.exports = (app) => {
     app.use('/add', hasAccess(), addController);
     app.use('/ordersList', hasAccess(), ordersListController);
     app.use('/about', aboutController);
+    app.use('/send', sendController);
     app.all('/*', notFoundController);
+    app.use('/error', errorController);
 }
-
