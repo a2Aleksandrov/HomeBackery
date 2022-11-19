@@ -5,10 +5,49 @@ function getAllBackery() {
     return Backery.find({});
 }
 
+function getCakes() {
+    return Backery.find({ kind: 'торти' });
+}
+
+function getGingerbreads() {
+    return Backery.find({ kind: 'меденки' });
+}
+
+function getSweets() {
+    return Backery.find({ kind: 'сладкиши' });
+}
+
 function getAllMaterials() {
     return Materials.find({});
 }
 
+function getfondants() {
+    return Materials.find({ kind: 'фондани' });
+}
+
+function getChocolates() {
+    return Materials.find({ kind: 'шоколади' });
+}
+
+function getPoshes() {
+    return Materials.find({ kind: 'пошове' });
+}
+
+function getPaints() {
+    return Materials.find({ kind: 'сладкарски бои' });
+}
+
+function getForms() {
+    return Materials.find({ kind: 'резци и форми' });
+}
+
+function getMoulds() {
+    return Materials.find({ kind: 'калъпи' });
+}
+
+function getBoxes() {
+    return Materials.find({ kind: 'кутии и опаковки' });
+}
 function getBackeryById(backeryId) {
     return Backery.findById(backeryId);
 }
@@ -54,8 +93,18 @@ function checkId(testedId, AllBackeries) {
 
 module.exports = {
     getAllBackery,
-    getAllMaterials,
+    getCakes,
+    getGingerbreads,
+    getSweets,
     getBackeryById,
+    getAllMaterials,
+    getfondants,
+    getChocolates,
+    getPoshes,
+    getPaints,
+    getForms,
+    getMoulds,
+    getBoxes,
     getMaterialById,
     addBackery,
     addMaterials,
