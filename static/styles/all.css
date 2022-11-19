@@ -178,7 +178,7 @@ img.hearts {
 
 .likeBtn {
     position: relative;
-   left: 17em
+    left: 17em
 }
 
 .likes {
@@ -220,29 +220,29 @@ footer p {
     text-decoration: none;
     border-radius: 60%;
     position: relative;
-    left: 40%;
-  }
-  
-  .fa:hover {
-      opacity: 0.8;
-  }
-  
-  .fa-facebook {
+    left: 41%;
+}
+
+.fa:hover {
+    opacity: 0.8;
+}
+
+.fa-facebook {
     background: white;
     color: #3B5998;
-  }
+}
 
-  .footer-contacts {
+.footer-contacts {
     color: white;
     opacity: 0.7;
     position: relative;
     left: 49%;
-  }
+}
 
-  .footer-contacts:hover {
+.footer-contacts:hover {
     color: white;
     text-decoration: none;
-  }
+}
 
 .no-products {
     font-weight: bold;
@@ -298,7 +298,9 @@ textarea#description {
 
 .homePage,
 .notFound,
-.contacts {
+.contacts,
+.send,
+.error {
     text-align: center;
     margin: 10rem;
 }
