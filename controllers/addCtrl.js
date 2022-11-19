@@ -46,7 +46,7 @@ addController.post('/', async (req, res) => {
         if (req.body.type == 'материали') {
             await addMaterials(data);
 
-            if (data.kind == 'фондатни') {
+            if (data.kind == 'фондани') {
                 res.redirect('/catalog/fondants');
             }
             if (data.kind == 'шоколади') {

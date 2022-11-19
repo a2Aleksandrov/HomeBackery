@@ -4,19 +4,27 @@ const { parseError } = require('../util/parser');
 const cartController = require('express').Router();
 
 cartController.get('/order', async (req, res) => {
-    const order = await getOrderByUser(req.user.email).lean();
+    try {
+        const order = await getOrderByUser(req.user.email).lean();
 
-    res.render('cart', {
-        title: 'Cart Page',
-        user: req.user,
-        order
-    });
+        res.render('cart', {
+            title: 'Cart Page',
+            user: req.user,
+            order
+        });
+    } catch (error) {
+        res.render('error');
+    }
 });
 
 cartController.get('/order/delete', async (req, res) => {
-    const order = await getOrderByUser(req.user.email);
-    await deleteOrder(order._id);
-    res.redirect('/catalog/backery');
+    try {
+        const order = await getOrderByUser(req.user.email);
+        await deleteOrder(order._id);
+        res.redirect('/catalog/cakes');
+    } catch (error) {
+        res.render('error');
+    }
 });
 
 cartController.post('/order', async (req, res) => {
@@ -40,7 +48,7 @@ cartController.post('/order', async (req, res) => {
         }
 
         await updateOrder(order._id, data);
-        res.redirect('/');
+        res.redirect('/send');
 
     } catch (error) {
         res.render('cart', {

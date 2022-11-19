@@ -46,9 +46,10 @@ orderController.post('/:id', async (req, res) => {
         order.totalPrice += current.price * item.quantity;
         data.totalPrice = order.totalPrice;
 
-        const updated = await updateOrder(order._id, data); 
-        
-        isBackery ? res.redirect('/catalog/backery') : res.redirect('/catalog/materials');
+        const updated = await updateOrder(order._id, data);
+        const kind = req.headers.referer.slice(30);
+
+        res.redirect('/catalog/' + kind);
 
     } catch (error) {
         if (isBackery) {
