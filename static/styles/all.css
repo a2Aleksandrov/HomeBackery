@@ -1,5 +1,5 @@
 body {
-    /* background-image: url("../images/background2.webp"); */
+    background-image: url("../images/background2.webp");
     padding: 0px;
     margin: 0px;
     height: 100%;
@@ -174,8 +174,6 @@ img.hearts {
     padding-left: 10px;
 }
 
-
-
 .likeBtn {
     position: relative;
     left: 17em
@@ -196,54 +194,51 @@ img.hearts {
 }
 
 footer {
-    margin-top: auto;
     text-align: center;
     background: #234465;
-    align-items: center;
-    justify-content: center;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
 }
 
 footer p {
     display: inline-flex;
     padding: 5px 0;
     font-weight: bold;
-    margin: 0rem;
+    margin: 0;
+    padding-left: 8rem;
     color: white;
-    align-items: flex-end;
 }
 
 .fa {
-    padding: 4px;
+    padding: 3px;
     font-size: 20px;
     width: 28px;
-    text-align: center;
     text-decoration: none;
-    border-radius: 60%;
+    border-radius: 50%;
     float: right;
-    margin-top: 4.5px;
-    margin-right: 2rem;
-    
-}
+    margin-top: 5.4px;
+    margin-right: 30px;
 
-.fa:hover {
-    opacity: 0.8;
 }
 
 .fa-facebook {
     background: white;
-    color: #3B5998;
+    color: #2b70c0;
 }
 
 .footer-contacts {
     color: white;
-    opacity: 0.7;
+    opacity: 0.5;
     float: right;
-    margin-top: 4px;
-    margin-right: 2rem;
+    margin-top: 6px;
+    margin-right: 30px;
+
 }
 
 .footer-contacts:hover {
     color: white;
+    opacity: 1;
     text-decoration: none;
 }
 

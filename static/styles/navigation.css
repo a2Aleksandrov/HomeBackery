@@ -2,7 +2,7 @@ nav.navbar {
     display: flexbox;
     letter-spacing: 0.05rem;
     background: #234465;
-    padding: 0.8rem 1rem;
+    padding: 0.4rem 1rem;
     color: white;
 }
 
@@ -52,5 +52,5 @@ nav.navbar ul li:hover>a {
 }
 
 .logo:hover{
-    background-color: white;
+    background-color: rgb(236, 202, 202);
 }
