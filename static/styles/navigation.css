@@ -9,7 +9,7 @@ nav.navbar {
 .button:hover,
 nav.navbar ul li a:hover,
 nav.navbar ul li:hover>a {
-    background: lightsalmon;
+    background: lightcoral;
     color: rgb(0, 0, 0);
     font-weight: bold;
     text-decoration: none;
@@ -45,7 +45,12 @@ nav.navbar ul li:hover>a {
     width: 56px;
     height: 36px;
     display: inline;
-    position: static;
+    position: relative;
+    left: 10%;
     padding: 0px;
     border-radius: 1rem;
+}
+
+.logo:hover{
+    background-color: white;
 }
