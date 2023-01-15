@@ -118,7 +118,7 @@ img {
 }
 
 .everyProduct>p:first-child {
-    font-size: 22px
+    font-size: 20px
 }
 
 .options {
@@ -196,9 +196,9 @@ img.hearts {
 footer {
     text-align: center;
     background: #234465;
-    position: absolute;
-    width: 100%;
+    position: relative;
     bottom: 0;
+    width: 100%;
 }
 
 footer p {
