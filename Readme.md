@@ -6,4 +6,3 @@ Registered users will be able to make orders.
 The admin account have full access. He can add/remove items to/from catalog, and manage all made orders.
 
 To start the server use npm start command.
-The site can be reached at http://localhost:3000
